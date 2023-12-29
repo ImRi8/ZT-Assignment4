@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Dashboard</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+    <!-- <link rel="stylesheet" type="text/css" href="styles.css"> -->
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div id="content">
+          <br><h5 class="ml-5" style="font-weight: bold;">Company Metrics</h5>
+          <div class="container-fuild">
+                  <div class="row m-4">
+                          <div class="col-sm-3">
+                            <div class="card bordercorner ">
+                              <div class="card-body">
+                                <h4 style="color: #71BE58;">$ 406,411.29</h4>
+                                <label>Total Revenue</label>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-sm-3 ">
+                            <div class="card bordercorner">
+                              <div class="card-body">
+                                  <h4>$ 620</h4>
+                                  <label>Total Jobs Average</label>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-sm-3">
+                                  <div class="card bordercorner">
+                                    <div class="card-body">
+                                        <h4>655</h4>
+                                        <label>Tickets Cleared</label>
+                                    </div>
+                                  </div>
+                          </div>
+                          <div class="col-sm-3 ">
+                                  <div class="card bordercorner">
+                                    <div class="card-body">
+                                        <h4>735</h4>
+                                        <label>Tickets Scheduled</label>
+                                    </div>
+                                  </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="container-fuild">
+                      <div class="row m-4">
+
+                              <div class="col-sm-3 ">
+                                <div class="card bordercorner">
+                                  <div class="card-body">
+                                      <h4 style="color: red;">$ 110,448</h4>
+                                      <label>Outstanding Amount</label>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-sm-3 ">
+                                      <div class="card bordercorner">
+                                        <div class="card-body">
+                                            <h4>105</h4>
+                                            <label>Membership Sold</label>
+                                        </div>
+                                      </div>
+                              </div>
+                              <div class="col-sm-3 ">
+                                      <div class="card bordercorner">
+                                        <div class="card-body">
+                                            <h4>436</h4>
+                                            <label>Jobs Completed</label>
+                                        </div>
+                                      </div>
+                              </div>
+                              <div class="col-sm-3">
+                                  <div class="card bordercorner">
+                                    <div class="card-body ">
+                                        <h4>65</h4>
+                                        <label>Tickets Cancelled</label>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                                  <h5 class="ml-5 mt-5" style="font-weight: bold;">Dashboard</h5>
+                                    <div class="container-fuild">
+                                          <div class="row m-4">
+                                                  <!-- <div class="col-sm-4">
+                                                          <div class="card h-100">
+                                                            <div class="card-body text-center">
+                                                              <canvas id="graphpie" width="100%" height="75%"></canvas> <br>
+                                                              <label style="font-weight: bold;">Revenue <span style="color: #71BE58;">$14K</span></label> <br>
+                                                              <label style="font-weight: bold;">Missed <span style="color: #71BE58;">$0</span></label>
+                                                            </div>
+                                                          </div>
+                                                    </div> -->
+                                                    <div class="col-sm-6" >
+                                                              <div class="card">
+                                                                <div class="card-body ">
+                                                                    <canvas id="graph1"></canvas>
+                                                                </div>
+                                                              </div>
+                                                    </div>
+                                                    <div class="col-sm-6" >
+                                                              <div class="card">
+                                                                <div class="card-body ">
+                                                                    <canvas id="graph2"></canvas>
+                                                                </div>
+                                                              </div>
+                                                    </div>
+                                            </div>
+                                      </div>
+    </div>
+  </div>
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <script rel="stylesheet" src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"></script> -->
+   <!-- <script src="script.js"></script> -->
+    <script>
+      let graph=document.getElementById('graph1').getContext('2d');
+      let masspopChart= new Chart(graph, {
+        type:'horizontalBar',
+        data:{
+          labels:['Everett','Seattle','Lynnwood','Bothell','Mukilteo','Edmonds'],
+          datasets:[{
+            label:'Revenue By Job Location',
+            data:[
+             80000,
+             75000,
+             49000,
+             48000,
+             46000,
+             34000,
+            ],
+            backgroundColor:'#71BE58',
+            hoverBorderWidth:3,
+            hoverBorderColor:'white'
+          }]
+        },
+        options:{
+          title:{
+            display:true,
+            text:'Revenue By Job Location',
+            fontSize: 20
+          },
+          legend:{
+            display:false
+          }
+        }
+      });
+    </script>
+    <script>
+      let graph1=document.getElementById('graph2').getContext('2d');
+      let masspopChart1= new Chart(graph1, {
+        type:'horizontalBar',
+        data:{
+          labels:['Service Plumbing','Bid Work HVAC','Service HVAC','Bid Work Plumbing','HWT Replacement','Maintainance','Material Sale'],
+          datasets:[{
+            label:'Revenue By Job Type',
+            data:[
+             180000,
+             130000,
+             79000,
+             77000,
+             47000,
+             44000,
+             2000,
+            ],
+            backgroundColor:'#71BE58',
+            hoverBorderWidth:3,
+            hoverBorderColor:'white'
+          }]
+        },
+        options:{
+          title:{
+            display:true,
+            text:'Revenue By Job Type',
+            fontSize: 20
+          },
+          legend:{
+            display:false
+          }
+        }
+      });
+    </script>
+</body>
+
+</html>
